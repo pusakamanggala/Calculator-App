@@ -12,8 +12,11 @@ class App extends Component {
   }
 
   handleInput = (value) => {
+    let inputLenght = this.state.inputValue.length;
     if (this.state.inputValue == 0) {
       this.setState({ inputValue: value });
+    } else if (inputLenght == 36) {
+      alert("Your input is too long");
     } else {
       this.setState({ inputValue: this.state.inputValue + "" + value });
     }
